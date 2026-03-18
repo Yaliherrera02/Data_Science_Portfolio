@@ -1,5 +1,8 @@
 📊 Optimización del Rendimiento - Call Center "Arcoiris"
-Este proyecto consiste en un análisis integral de métricas de desempeño y calidad de un equipo de atención al cliente y ventas. El objetivo es transformar datos crudos en insights accionables para supervisores y gerencia.
+Este proyecto consiste en un análisis integral de performance operativa (Business Intelligence) aplicado a un dataset de un Call Center con más de 9.800 registros.
+El objetivo principal fue transformar datos crudos en información visual y estratégica, permitiendo identificar patrones de eficiencia, calidad de atención y productividad del equipo. A través del uso de herramientas avanzadas de Google Sheets/Excel, se desarrolló un tablero de control (Dashboard) diseñado para:
+-Monitorear KPIs críticos (Conversión, Calidad y Tiempos) de forma ágil.
+-Optimizar la evaluación de desempeño, basándose en métricas objetivas y no solo en volúmenes de llamadas.
 
 📋 Contexto del Proyecto
 El dataset comprende una operación de 9.827 llamadas procesadas, distribuidas en 600 registros de actividad diaria de 50 agentes durante un periodo de 12 días.
