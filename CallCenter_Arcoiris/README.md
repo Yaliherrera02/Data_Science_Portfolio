@@ -18,6 +18,8 @@ min_pausa: Tiempo de descanso programado.
 
 calificacion: Feedback del cliente en escala 1-6.
 
+Conversión: Porcentaje de llamadas que finalizaron en venta sobre el total de llamadas atendidas.
+
 🛠️ Stack Tecnológico
 
 Excel / Google Sheets: Utilizado para el procesamiento de datos mediante Tablas Dinámicas y la creación de un Dashboard de control operativo con gráficos de distribución porcentual y rankings de performance.
@@ -26,6 +28,8 @@ Excel / Google Sheets: Utilizado para el procesamiento de datos mediante Tablas 
 Identificación de Perfiles de Alto Desempeño: Se implementó un modelo de scoring para detectar al "Agente del Mes", priorizando la tasa de conversión y la satisfacción del cliente.
 
 Hallazgo: Se identificó que los agentes con mayor volumen de ventas no siempre poseen la mejor calidad. El perfil seleccionado (Esther Rodríguez) logró un equilibrio óptimo con un 90% de conversión y una calificación de 5.5/6
+
+
 ![Top agentes cantidad de ventas](Top_10_Agentes_por_Cantidad_de_Ventas.png)
 ![Top agentes según porcentaje de conversión](Top_10_Agentes_según_porcentaje_de_conversión.png)
 <div align="center">
