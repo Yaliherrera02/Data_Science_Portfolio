@@ -27,6 +27,13 @@ Identificación de Perfiles de Alto Desempeño: Se implementó un modelo de scor
 
 Hallazgo: Se identificó que los agentes con mayor volumen de ventas no siempre poseen la mejor calidad. El perfil seleccionado (Esther Rodríguez) logró un equilibrio óptimo con un 90% de conversión y una calificación de 5.5/6
 
+
+Eficiencia Operativa y Distribución del Tiempo
+El análisis de la jornada permitió visualizar cómo se distribuye el tiempo entre la atención directa, las tareas administrativas y los descansos.
+
+![Distribución del Tiempo](chart.png)
+
+
 📈 Conclusiones
 Identificación del talento: Este análisis permite destacar a los agentes que logran un equilibrio real entre ventas y servicio al cliente. Así, el reconocimiento al "Agente del Mes" se basa en resultados medibles y objetivos, y no solo en impresiones generales.
 
