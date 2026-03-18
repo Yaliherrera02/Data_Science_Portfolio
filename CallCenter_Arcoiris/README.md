@@ -26,12 +26,16 @@ Excel / Google Sheets: Utilizado para el procesamiento de datos mediante Tablas 
 Identificación de Perfiles de Alto Desempeño: Se implementó un modelo de scoring para detectar al "Agente del Mes", priorizando la tasa de conversión y la satisfacción del cliente.
 
 Hallazgo: Se identificó que los agentes con mayor volumen de ventas no siempre poseen la mejor calidad. El perfil seleccionado (Esther Rodríguez) logró un equilibrio óptimo con un 90% de conversión y una calificación de 5.5/6
+![Top agentes cantidad de ventas](Top_10_Agentes_por_Cantidad_de_Ventas.png)
+![Top agentes según porcentaje de conversión](Top_10_Agentes_según_porcentaje_de_conversión.png)
+![Top agentes segun calificacion media ](Top_10_agentes_segun_calificacion_media.png)
+
 
 
 Eficiencia Operativa y Distribución del Tiempo
 El análisis de la jornada permitió visualizar cómo se distribuye el tiempo entre la atención directa, las tareas administrativas y los descansos.
 
-![Distribución del Tiempo](chart.png)
+![Distribución del Tiempo](Distribucion_tiempos.png)
 
 
 📈 Conclusiones
