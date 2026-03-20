@@ -34,8 +34,8 @@ Relación técnica: Análisis de la suma de atributos de los planteles en relaci
 
 Este proyecto refleja mi proceso de aprendizaje en Ciencia de Datos, buscando siempre pasar de un código funcional a uno eficiente, legible y escalable. 
 
-🚀 Cómo ejecutar el proyecto
-Para replicar el análisis desde cero, seguí estos pasos en orden:
+## 🚀 Cómo ejecutar el proyecto
+Para replicar el análisis desde cero, te recomiendo seguir estos pasos en orden:
 1. Clonar el repositorio:
 Descargá los archivos en tu carpeta local.
 
@@ -64,7 +64,7 @@ python generar_tablas.py
 Una vez creadas las tablas, ejecutá el script principal que realiza las consultas SQL mediante DuckDB y genera las visualizaciones de performance:
 python analisis.py
 
-📂 Acceso a los Datos
+## 📂 Acceso a los Datos
 Debido al tamaño de los archivos originales, el dataset completo se encuentra alojado en Google Drive.
 
 Descargá la carpeta de datos desde: https://drive.google.com/drive/folders/15zsboEZP0iqAG1T51ydxrwC_yXrwAV-I?usp=sharing
