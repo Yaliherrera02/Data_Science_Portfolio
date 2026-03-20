@@ -33,7 +33,7 @@ Hallazgo: Se identificó que los agentes con mayor volumen de ventas no siempre 
 ![Top agentes cantidad de ventas](Top_10_Agentes_por_Cantidad_de_Ventas.png)
 ![Top agentes según porcentaje de conversión](Top_10_Agentes_según_porcentaje_de_conversión.png)
 <div align="center">
-  <img src="Top_10_agentes_segun_calificacion_media.png" width="550">
+  <img src="Top_10_agentes_segun_calificacion_media.png" width="600">
   <p><i>Figura 1: Top 10 de agentes según calificación media (Calidad).</i></p>
 </div>
 

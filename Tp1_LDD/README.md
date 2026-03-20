@@ -1,11 +1,11 @@
 # Análisis de la Liga Belga: Rendimiento y Dinámica Competitiva (2009-2013)
-📋 Sobre este proyecto
+## 📋 Sobre este proyecto
 El objetivo de este proyecto es analizar el desempeño y la dinámica competitiva de la liga de fútbol de Bélgica a lo largo de cuatro temporadas consecutivas (2009/2010 - 2012/2013). A través de este estudio, busqué identificar patrones de éxito, evaluar el impacto de la localía y explorar la relación entre los atributos técnicos de los planteles y su capacidad goleadora.
 
 Evolución del trabajo: De un TP grupal a una versión optimizada
 Este proyecto surgió originalmente como un trabajo práctico para la materia Laboratorio de Datos (UBA) realizado en grupo. Luego de la entrega, realicé una refactorización individual con el fin de aplicar mejores prácticas de programación y optimizar el procesamiento de los datos.
 
-¿Qué mejoras implementé en esta nueva versión?
+## ¿Qué mejoras implementé en esta nueva versión?
 
 Nombres declarativos: Reemplacé variables y tablas que tenían nombres genéricos por nombres que describen claramente su contenido. Esto hace que el código sea profesional y fácil de entender para cualquiera.
 
@@ -17,18 +17,14 @@ Procesamiento eficiente (DuckDB + DataFrames): En lugar de generar y leer archiv
 Cálculos automáticos: El código ahora cuenta los partidos y calcula los promedios desde la base de datos real mediante SQL (COUNT, SUM), asegurando resultados exactos.
 
 
-Estructura dinámica: El script identifica automáticamente los equipos y temporadas, lo que permite reutilizar el análisis con otros datos sin tener que modificar el código manualmente.
 
-
-🛠️ Herramientas utilizadas
+## 🛠️ Herramientas utilizadas
 
 Python: Para la lógica de control y automatización.
 DuckDB (SQL): Para realizar consultas complejas de forma eficiente.
 Matplotlib y Seaborn: Para la creación de las visualizaciones.
-Pandas: Para la manipulación y organización de tablas de datos.
 
-
-📊 Análisis realizados
+## 📊 Análisis realizados
 
 Evolución del rendimiento: Seguimiento de goles a favor y en contra por temporada.
 Efectividad goleadora: Cálculo de promedios de gol por equipo según su permanencia en la liga.
