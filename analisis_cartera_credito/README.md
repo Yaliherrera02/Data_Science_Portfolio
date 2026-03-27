@@ -23,8 +23,9 @@ El análisis se realizó sobre un conjunto de datos capturado entre el 5 de ener
 El script incluye consultas estratégicas para responder preguntas de negocio:
 * **Validación de Scoring vs. Estado de Pago** : Se analiza la relación entre el scoring crediticio promedio y el estado real de los préstamos (Finalizado, Activo, En Mora). Al incluir el volumen total de casos por grupo, logramos confirmar estadísticamente si el puntaje inicial realmente predice la mora real.
 * **Salud Financiera**: Cálculo de la Cartera Pendiente (monto total a cobrar) y segmentación de préstamos activos vs. atrasados. 
-* **Gestión de Mora**: Identificación de deudores críticos con deuda consolidada mayor a $\$50.000$. 
-* **Segmentación de Riesgo**: Clasificación automática de clientes en niveles Bajo, Medio y Alto según su puntaje crediticio. 
+* **Gestión de Mora**: Identificación de deudores críticos con deuda consolidada mayor a $50.000. 
+* **Segmentación de Riesgo**: Clasificación automática de clientes en niveles Bajo, Medio y Alto según su puntaje crediticio.
+* **Filtro de Clientes Premium**: Identificación de usuarios con Scoring > 700, ordenados según su calidad de pago. Esta consulta permite detectar clientes ideales para ofrecerles beneficios exclusivos o aumentos de límite automáticos.
 
 ## 💡 Insights y Hallazgos de Negocio
 * **Efectividad del Modelo**: El 66,67% de la mora se concentra en el segmento de Scoring Bajo, lo que demuestra que el filtro de riesgo inicial es preciso para detectar la mayoría de los perfiles críticos, aunque existe un margen de mejora en el segmento medio.
