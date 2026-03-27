@@ -4,9 +4,9 @@ Este proyecto simula el entorno de base de datos de una entidad financiera para 
 ## 📋 Contexto del proyecto
 El análisis se realizó sobre un conjunto de datos capturado entre el 5 de enero de 2025 (fecha de la primera alta) y el 21 de marzo de 2026 (fecha del último desembolso), compuesto por:
 
-30 Usuarios únicos con perfiles de riesgo y límites crediticios diversos.
-30 Préstamos otorgados con integridad referencial completa.
-208 Cuotas que conforman el historial detallado de pagos y mora.
+* **30 Usuarios únicos con perfiles de riesgo y límites crediticios diversos.**
+* **30 Préstamos otorgados con integridad referencial completa.**
+* **208 Cuotas que conforman el historial detallado de pagos y mora.**
 
 ## 🚀 Tecnologías Utilizadas
 * **Motor de DB:** PostgreSQL 
