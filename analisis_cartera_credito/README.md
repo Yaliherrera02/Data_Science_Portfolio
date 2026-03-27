@@ -26,7 +26,7 @@ El script incluye consultas estratégicas para responder preguntas de negocio:
 
 ## 🛠️ Cómo ejecutar el proyecto
 
-## 🐳 1. Configuración del Entorno con Docker
+### 🐳 1. Configuración del Entorno con Docker
 Para asegurar que el proyecto corra en un entorno profesional y aislado, seguí estos pasos para configurar tu base de datos:
 
 -Levantar el contenedor (PostgreSQL):
@@ -35,7 +35,7 @@ Ejecutá este comando en tu terminal para crear la instancia:
 Bash
 docker run --name cartero-db -e POSTGRES_PASSWORD=admin123 -p 5432:5432 -d postgres
 
-## 📥 2. Carga de Datos y Análisis
+### 📥 2. Carga de Datos y Análisis
 Conectar desde DBeaver:
 Crea una nueva conexión de tipo PostgreSQL
 Host: localhost | Puerto: 5432 | Usuario: postgres | Contraseña: admin123 (la que definimos en el paso anterior).
