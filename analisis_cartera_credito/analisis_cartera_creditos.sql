@@ -18,6 +18,7 @@ CREATE TABLE Usuarios (
     scoring_crediticio FLOAT,
     limite_disponible FLOAT
 );
+
 CREATE TABLE Prestamos (
     id_prestamo INT PRIMARY KEY,
     id_usuario INT,
@@ -94,7 +95,7 @@ INSERT INTO Prestamos (id_prestamo, id_usuario, monto_solicitado, cantidad_cuota
 (116, 16, 550000.00, 18, 0.08, 'En Mora', '2025-09-22', '2025-09-23'),
 (117, 17, 500000.00, 12, 0.07, 'Activo', '2025-09-22', '2025-09-23'),
 (118, 18, 600000.00, 18, 0.07, 'Activo', '2025-09-26', '2025-09-27'),
-(119, 19, 600000.00, 3, 0.12, 'Finalizado', '2025-10-04', '2025-10-06'),
+(119, 19, 170000.00, 3, 0.12, 'Finalizado', '2025-10-04', '2025-10-06'),
 (120, 20, 350000.00, 6, 0.08, 'Activo', '2025-10-24', '2025-10-25'),
 (121, 21, 150000.00, 6, 0.14, 'En Mora', '2025-11-12', '2025-11-14'),
 (122, 22, 350000.00, 12, 0.12, 'En Mora', '2025-11-28', '2025-12-01'),
@@ -242,9 +243,9 @@ INSERT INTO Cuotas (id_cuota, id_prestamo, nro_cuota, fecha_vencimiento, monto_c
 (1131, 118, 16, '2027-01-27', 35666.67, 'pendiente'),
 (1132, 118, 17, '2027-02-27', 35666.67, 'pendiente'),
 (1133, 118, 18, '2027-03-27', 35666.67, 'pendiente'),
-(1134, 119, 1, '2025-11-06', 224000.00, 'pagado'),
-(1135, 119, 2, '2025-12-06', 224000.00, 'pagado'),
-(1136, 119, 3, '2026-01-06', 224000.00, 'pagado'),
+(1134, 119, 1, '2025-11-06', 63466.67, 'pagado'),
+(1135, 119, 2, '2025-12-06', 63466.67, 'pagado'),
+(1136, 119, 3, '2026-01-06', 63466.67, 'pagado'),
 (1137, 120, 1, '2025-11-25', 63000.00, 'pagado'),
 (1138, 120, 2, '2025-12-25', 63000.00, 'pagado'),
 (1139, 120, 3, '2026-01-25', 63000.00, 'pagado'),
@@ -320,8 +321,8 @@ INSERT INTO Cuotas (id_cuota, id_prestamo, nro_cuota, fecha_vencimiento, monto_c
 
 -- 2. ANÁLISIS EXPLORATORIO - SEGMENTACIÓN DE CLIENTES
 -- =============================================================================
---Lista usuarios
-select distinct id_usuario
+--Lista usuarios 
+select distinct id_usuario, nombre, apellido
 from usuarios
 ORDER BY id_usuario ASC; 
 
@@ -408,7 +409,7 @@ from cuotas
 where estado_pago='mora' 
 
 -- Deuda total en mora (Capital en riesgo)
-select SUM(monto_cuota)
+select SUM(monto_cuota) as Monto_en_riesgo
 from cuotas 
 where estado_pago='mora'
 ;
@@ -435,7 +436,7 @@ having SUM(c.monto_cuota)>50000
 order by deuda desc;
 
 --Análisis de Promedios
---"Muestra el scoring promedio de cada grupo de préstamos (Finalizados, Activos, En Mora)"
+--Muestra el scoring promedio de cada grupo de préstamos (Finalizados, Activos, En Mora)
 SELECT 
     p.estado AS estado_prestamo,
     AVG(u.scoring_crediticio) AS promedio_scoring,
@@ -447,33 +448,47 @@ ORDER BY promedio_scoring DESC;
 
 
 
--- CRUZAMIENTO: SEGMENTACIÓN DE SCORING VS. ESTADO REAL DEL PRÉSTAMO
---"Segmenta la cartera por niveles de riesgo (Bajo, Medio, Alto) y cuenta 
---cuántos préstamos hay en cada estado para cada nivel".
+-- CRUCE DE VARIABLES: NIVEL DE SCORING VS. COMPORTAMIENTO DE PAGO
+--Segmenta la cartera por niveles de riesgo (Bajo, Medio, Alto) y cuenta  
+--cuántos préstamos hay en cada estado para cada nivel.
 
 SELECT 
-    -- 1. Creamos las categorías de scoring (la lógica de tu imagen 2)
+    --  Creamos las categorías de scoring 
     CASE 
         WHEN u.scoring_crediticio < 500 THEN '1- Bajo'
         WHEN u.scoring_crediticio BETWEEN 500 AND 800 THEN '2- Medio'
         WHEN u.scoring_crediticio > 800 THEN '3- Alto'
-    END AS segmento_scoring,
+    END AS nivel_scoring,
     
-    -- 2. Traemos el estado del préstamo (la lógica de tu imagen 3)
+    -- Traemos el estado del préstamo 
     p.estado AS estado_prestamo,
     
-    -- 3. Contamos cuántos casos caen en cada cruce
+    -- Contamos cuántos casos caen en cada cruce
     COUNT(p.id_prestamo) AS cantidad_prestamos
 
+	FROM usuarios u
+	-- Unimos las tablas 
+	INNER JOIN prestamos p ON u.id_usuario = p.id_usuario
+	
+	-- Agrupamos por las dos columnas que queremos cruzar
+	GROUP BY 1, 2  -- (1 es nivel_scoring, 2 es estado_prestamo)
+	
+	-- Ordenamos
+	ORDER BY 1, 2;
+
+-- DIAMANTES EN BRUTO: Usuarios con Scoring Bajo pero excelente comportamiento de pago
+-- Buscamos identificar clientes que superan su perfil de riesgo inicial.
+SELECT 
+    u.id_usuario,
+    u.nombre,
+    u.scoring_crediticio,
+    p.id_prestamo,
+    p.monto_solicitado AS monto_prestado,
+    p.estado AS estado_actual
 FROM usuarios u
--- Unimos las tablas (INNER JOIN porque necesitamos que tengan préstamo)
 INNER JOIN prestamos p ON u.id_usuario = p.id_usuario
-
--- Agrupamos por las dos columnas que queremos cruzar
-GROUP BY 1, 2  -- (1 es segmento_scoring, 2 es estado_prestamo)
-
--- Ordenamos para que quede prolijo
-ORDER BY 1, 2;
-
+WHERE u.scoring_crediticio < 500 
+  AND p.estado IN ('Finalizado', 'Activo') 
+ORDER BY u.scoring_crediticio ASC;
 
 
