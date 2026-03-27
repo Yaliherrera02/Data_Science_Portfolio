@@ -14,15 +14,15 @@ Este proyecto simula el entorno de base de datos de una entidad financiera para 
 
 ## 📈 Análisis Realizados (KPIs)
 El script incluye consultas estratégicas para responder preguntas de negocio:
-Validación de Scoring vs. Estado de Pago: Se analiza la relación entre el scoring crediticio promedio y el estado real de los préstamos (Finalizado, Activo, En Mora). Al incluir el volumen total de casos por grupo, logramos confirmar estadísticamente si el puntaje inicial realmente predice la mora real.
-Salud Financiera: Cálculo de la Cartera Pendiente (monto total a cobrar) y segmentación de préstamos activos vs. atrasados. 
-Gestión de Mora: Identificación de deudores críticos con deuda consolidada mayor a $\$50.000$. 
-Segmentación de Riesgo: Clasificación automática de clientes en niveles Bajo, Medio y Alto según su puntaje crediticio. 
+* **Validación de Scoring vs. Estado de Pago** : Se analiza la relación entre el scoring crediticio promedio y el estado real de los préstamos (Finalizado, Activo, En Mora). Al incluir el volumen total de casos por grupo, logramos confirmar estadísticamente si el puntaje inicial realmente predice la mora real.
+* **Salud Financiera**: Cálculo de la Cartera Pendiente (monto total a cobrar) y segmentación de préstamos activos vs. atrasados. 
+* **Gestión de Mora**: Identificación de deudores críticos con deuda consolidada mayor a $\$50.000$. 
+* **Segmentación de Riesgo**: Clasificación automática de clientes en niveles Bajo, Medio y Alto según su puntaje crediticio. 
 
 ## 💡 Insights y Hallazgos de Negocio
-Efectividad del Modelo: El 66,67% de la mora se concentra en el segmento de Scoring Bajo, lo que demuestra que el filtro de riesgo inicial es preciso para detectar la mayoría de los perfiles críticos, aunque existe un margen de mejora en el segmento medio.
-Detección de "Diamantes en Bruto":  El análisis identificó usuarios con scoring bajo que, a pesar de su perfil de riesgo inicial, cumplieron con el pago de su monto maximo permitido satisfactoriamente ($170.000). Esto sugiere que el límite actual les queda "chico" y representa una oportunidad para ajustar los límites de crédito y ofrecerles mejores condiciones en sus próximos préstamos para que sigan eligiendo la empresa.
-Prioridad en Cobranzas: Al identificar deudores con montos altos (más de $50.000), el equipo puede enfocarse primero en los casos que más afectan económicamente a la empresa, ahorrando tiempo y esfuerzo.
+* **Efectividad del Modelo**: El 66,67% de la mora se concentra en el segmento de Scoring Bajo, lo que demuestra que el filtro de riesgo inicial es preciso para detectar la mayoría de los perfiles críticos, aunque existe un margen de mejora en el segmento medio.
+* **Detección de "Diamantes en Bruto"**: El análisis identificó usuarios con scoring bajo que, a pesar de su perfil de riesgo inicial, cumplieron con el pago de su monto maximo permitido satisfactoriamente ($170.000). Esto sugiere que el límite actual les queda "chico" y representa una oportunidad para ajustar los límites de crédito y ofrecerles mejores condiciones en sus próximos préstamos para que sigan eligiendo la empresa.
+* **Prioridad en Cobranzas**: Al identificar deudores con montos altos (más de $50.000), el equipo puede enfocarse primero en los casos que más afectan económicamente a la empresa, ahorrando tiempo y esfuerzo.
 
 ## 🛠️ Cómo ejecutar el proyecto
 
@@ -46,7 +46,7 @@ Una vez conectada, tenés dos formas de correr este análisis según tu preferen
 
 Abrí el archivo principal analisis_cartera_creditos.sql, que incluye sentencias INSERT INTO con todos los datos necesarios, y descomentá esa parte del codigo y corré todo el script.
 
-### Pasos para la Importación Manual (Opción B)
+### Opción B: Pasos para la Importación Manual
 
 Al no usar los INSERT automáticos y optar cargar los archivos .csv a mano, seguí este orden:
 
