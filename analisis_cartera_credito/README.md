@@ -26,11 +26,15 @@ El script incluye consultas estratégicas para responder preguntas de negocio:
 * **Gestión de Mora**: Identificación de deudores críticos con deuda consolidada mayor a $50.000. 
 * **Segmentación de Riesgo**: Clasificación automática de clientes en niveles Bajo, Medio y Alto según su puntaje crediticio.
 * **Filtro de Clientes Premium**: Identificación de usuarios con Scoring > 700, ordenados según su calidad de pago. Esta consulta permite detectar clientes ideales para ofrecerles beneficios exclusivos o aumentos de límite automáticos.
+* **Progreso de Pagos**: Cálculo del porcentaje de avance de cada préstamo mediante una CTE. Nos enfocamos en usuarios que ya iniciaron su esquema de pagos para medir su ritmo de cancelación.
+* **Análisis de Estacionalidad**: Consulta de mora mensual para detectar patrones de pago según la época del año.
 
 ## 💡 Insights y Hallazgos de Negocio
 * **Efectividad del Modelo**: El 66,67% de la mora se concentra en el segmento de Scoring Bajo, lo que demuestra que el filtro de riesgo inicial es preciso para detectar la mayoría de los perfiles críticos, aunque existe un margen de mejora en el segmento medio.
-* **Detección de "Diamantes en Bruto"**: El análisis identificó usuarios con scoring bajo que, a pesar de su perfil de riesgo inicial, cumplieron con el pago de su monto maximo permitido satisfactoriamente ($170.000). Esto sugiere que el límite actual les queda "chico" y representa una oportunidad para ajustar los límites de crédito y ofrecerles mejores condiciones en sus próximos préstamos para que sigan eligiendo la empresa.
+* **Concentración de Perfiles Premium**: El 53% de la cartera (16 de 30 usuarios) tiene un perfil crediticio de excelencia (Scoring > 700). Este grupo representa a los candidatos ideales para programas de fidelización, asegurando que los mejores perfiles sigan eligiendo la plataforma frente a otras opciones del mercado.
+* **Análisis de Estacionalidad**: La mayor concentración de mora se registra en el primer trimestre (febrero y marzo). Si bien el dataset se enfoca en préstamos vigentes, este hallazgo permite establecer una base para monitorear si factores externos (como el inicio del ciclo lectivo o gastos de vacaciones) impactan en la capacidad de pago de los usuarios.
 * **Prioridad en Cobranzas**: Al identificar deudores con montos altos (más de $50.000), el equipo puede enfocarse primero en los casos que más afectan económicamente a la empresa, ahorrando tiempo y esfuerzo.
+* **Detección de "Diamantes en Bruto"**: El análisis identificó usuarios con scoring bajo que, a pesar de su perfil de riesgo inicial, cumplieron con el pago de su monto maximo permitido satisfactoriamente ($170.000). Esto sugiere que el límite actual les queda "chico" y representa una oportunidad para ajustar los límites de crédito y ofrecerles mejores condiciones en sus próximos préstamos para que sigan eligiendo la empresa.
 
 ## 🛠️ Cómo ejecutar el proyecto
 

@@ -491,4 +491,34 @@ WHERE u.scoring_crediticio < 500
   AND p.estado IN ('Finalizado', 'Activo') 
 ORDER BY u.scoring_crediticio ASC;
 
-
+--Progreso de los prestamos de usuarios que inciaron su esquema de pagos
+WITH ResumenCuotas AS (
+    SELECT 
+        u.nombre, u.apellido,
+        p.id_prestamo, 
+        p.cantidad_cuotas, 
+        COUNT(CASE WHEN c.estado_pago = 'pagado' THEN 1 END) AS cantidad_cuotas_pagadas
+    FROM usuarios u
+    INNER JOIN prestamos p ON u.id_usuario = p.id_usuario
+    INNER JOIN cuotas c ON p.id_prestamo = c.id_prestamo
+    WHERE p.estado = 'Activo'
+    GROUP BY u.nombre, u.apellido, p.id_prestamo, p.cantidad_cuotas, p.estado
+    HAVING COUNT(CASE WHEN c.estado_pago = 'pagado' THEN 1 END) >= 1
+)
+SELECT 
+    *, 
+  ROUND(cantidad_cuotas_pagadas * 100.0 / cantidad_cuotas, 2) AS porcentaje_pago
+FROM ResumenCuotas
+ORDER BY id_prestamo;
+	
+--Análisis por Mes: ¿En qué mes hubo más mora?
+-- Esto sirve para ver si hay estacionalidad
+SELECT 
+    EXTRACT(MONTH FROM fecha_vencimiento) AS mes_numero,
+    TO_CHAR(fecha_vencimiento, 'Month') AS nombre_mes, 
+    COUNT(id_cuota) AS cantidad_cuotas_mora
+FROM cuotas
+WHERE estado_pago = 'mora'
+GROUP BY 1, 2
+ORDER BY mes_numero ASC;
+	
