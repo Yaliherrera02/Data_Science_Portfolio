@@ -1,8 +1,8 @@
 # 📊 Análisis de Performance y Business Intelligence — Call Center "Arcoiris"
 Este proyecto consiste en un análisis integral de performance operativa (Business Intelligence) aplicado a un dataset de un Call Center con más de 9.800 registros.
 El objetivo principal fue transformar datos crudos en información visual y estratégica, permitiendo identificar patrones de eficiencia, calidad de atención y productividad del equipo. A través del uso de herramientas avanzadas de Google Sheets/Excel, se desarrolló un tablero de control (Dashboard) diseñado para:
--Monitorear KPIs críticos (Conversión, Calidad y Tiempos) de forma ágil.
--Optimizar la evaluación de desempeño, basándose en métricas objetivas y no solo en volúmenes de llamadas.
+* **Monitorear KPIs críticos** (Conversión, Calidad y Tiempos) de forma ágil.
+* **Optimizar la evaluación de desempeño**, basándose en métricas objetivas y no solo en volúmenes de llamadas.
 
 ## 📋 Contexto del Proyecto
 El dataset comprende una operación de 9.827 llamadas procesadas, distribuidas en 600 registros de actividad diaria de 50 agentes durante un periodo de 12 días.
@@ -30,8 +30,8 @@ Identificación de Perfiles de Alto Desempeño: Se implementó un modelo de scor
 Hallazgo: Se identificó que los agentes con mayor volumen de ventas no siempre poseen la mejor calidad. El perfil seleccionado (Esther Rodríguez) logró un equilibrio óptimo con un 90% de conversión y una calificación de 5.5/6
 
 
-![Top agentes cantidad de ventas](Top_10_Agentes_por_Cantidad_de_Ventas.png)
-![Top agentes según porcentaje de conversión](Top_10_Agentes_según_porcentaje_de_conversión.png)
+![Top agentes cantidad de ventas](top_10_agentes_ventas.png)
+![Top agentes según porcentaje de conversión](top_10_agentes_conversión.png)
 <div align="center">
   <img src="Top_10_agentes_segun_calificacion_media.png" width="600">
   <p><i>Figura 1: Top 10 de agentes según calificación media (Calidad).</i></p>
