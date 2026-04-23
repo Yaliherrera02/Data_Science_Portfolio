@@ -17,7 +17,9 @@ El análisis se realizó sobre un conjunto de datos capturado entre el 5 de ener
 ## 🛠️ Estructura del Proyecto (DER)
 Para garantizar la integridad referencial y el seguimiento de la deuda, se diseñó el siguiente modelo relacional:
 
-![Diagrama Entidad-Relación](./der-cartera-creditos.png)
+<p align="center">
+  <img src="./der-cartera-creditos.png" alt="Diagrama Entidad Relación" width="300">
+</p>
 * **Usuarios:** Información personal y scoring inicial. 
 * **Préstamos:** Condiciones financieras (monto, tasa, cuotas). 
 * **Cuotas:** Detalle de vencimientos y estados (Pagado, Pendiente, Mora).
