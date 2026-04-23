@@ -20,6 +20,7 @@ Para garantizar la integridad referencial y el seguimiento de la deuda, se dise�
 <p align="center">
   <img src="./der-cartera-creditos.png" alt="Diagrama Entidad Relación" width="300">
 </p>
+
 * **Usuarios:** Información personal y scoring inicial. 
 * **Préstamos:** Condiciones financieras (monto, tasa, cuotas). 
 * **Cuotas:** Detalle de vencimientos y estados (Pagado, Pendiente, Mora).
