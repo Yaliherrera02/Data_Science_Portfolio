@@ -2,9 +2,13 @@
 Este repositorio contiene la resolución de problemas de optimización logística y de producción utilizando Programación Lineal y Entera. El objetivo principal es traducir restricciones de negocio complejas en modelos matemáticos para maximizar la eficiencia operativa y la rentabilidad.
 ## 🚀 Tecnologías Utilizadas
 • Python 3.9
+
 • SciPy (Módulo optimize.milp para programación lineal entera mixta)
+
 • NumPy (Gestión de matrices y vectores)
+
 • Matplotlib (Visualización de regiones de factibilidad)
+
 ## 📋 Casos de Estudio
 1. Optimización de Producción en Imprenta
 
